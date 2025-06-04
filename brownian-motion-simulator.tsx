@@ -14,8 +14,8 @@ interface BrownianPoint {
 
 export default function BrownianMotionSimulator() {
   // Parameters
-  const [drift, setDrift] = useState(0.1)
-  const [diffusion, setDiffusion] = useState(0.3)
+  const [drift, setDrift] = useState(0)
+  const [diffusion, setDiffusion] = useState(1)
   const [steps, setSteps] = useState(1000)
   const [intervalLength, setIntervalLength] = useState(10)
 
@@ -25,7 +25,7 @@ export default function BrownianMotionSimulator() {
   const [path, setPath] = useState<BrownianPoint[]>([])
   const [fullPath, setFullPath] = useState<BrownianPoint[]>([])
 
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number>(0)
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   // Generate Brownian motion path
@@ -63,6 +63,15 @@ export default function BrownianMotionSimulator() {
     setIsAnimating(false)
     setCurrentStep(0)
     setPath([])
+    
+    // clear the canvas
+    const canvas = canvasRef.current
+    if (canvas) {
+      const ctx = canvas.getContext("2d")
+      if (ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+      }
+    }
     if (animationRef.current) {
       cancelAnimationFrame(animationRef.current)
     }
