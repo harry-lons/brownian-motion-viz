@@ -1,3 +1,9 @@
+This Brownian motion simulator, now live at [brownian.HarryLons.com](https://brownian.harrylons.com) allows users to generate a stochastic process known as a Wiener process, which models Brownian motion. Try it out and tinker with the parameters.
+
+<img width="1096" alt="Screenshot 2025-06-04 at 8 52 00 PM" src="https://github.com/user-attachments/assets/f209835b-1554-4997-af7e-43f6f7c2a3c1" />
+
+<img width="1120" alt="brownian" src="https://github.com/user-attachments/assets/39157f12-5814-463d-821e-6201160f3d37" />
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
